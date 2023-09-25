@@ -1,4 +1,3 @@
-// Setup
 const recordCollection = {
     2548: {
         albumTitle: 'Slippery When Wet',
@@ -19,7 +18,6 @@ const recordCollection = {
     }
 };
 
-// Only change code below this line
 function updateRecords(records, id, prop, value) {
 
     if (value === '') {
