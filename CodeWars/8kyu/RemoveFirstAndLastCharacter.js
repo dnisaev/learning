@@ -6,6 +6,7 @@ function removeChar(str) {
 
   for (i; i < str.length - 1; i++) {
     string = string + str[i];
+    console.log(string);
   }
 
   return string;
