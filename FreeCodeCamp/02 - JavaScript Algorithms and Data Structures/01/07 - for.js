@@ -1,5 +1,12 @@
-const myArray = [];
+// const myArray = [];
 
-for (let i = 1; i <= 5; i++){
-  myArray.push(i);
+// for (let i = 1; i <= 5; i++) {
+//   myArray.push(i);
+// }
+
+const myArr = [2, 3, 4, 5, 6];
+
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+  total = total + myArr[i];
 }
