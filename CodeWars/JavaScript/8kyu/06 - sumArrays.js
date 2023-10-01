@@ -5,7 +5,7 @@ function sum (numbers) {
     let i = 0;
       
       for (i; i < numbers.length; i++) {            
-        amount = amount + numbers[i];
+        amount += numbers[i];
       }
     return amount;
   };

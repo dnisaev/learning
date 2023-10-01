@@ -5,7 +5,7 @@ function removeChar(str) {
   let i = 1;
 
   for (i; i < str.length - 1; i++) {
-    string = string + str[i];
+    string += str[i];
     console.log(string);
   }
 

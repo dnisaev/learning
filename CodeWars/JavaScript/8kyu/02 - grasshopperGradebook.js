@@ -1,5 +1,4 @@
 function getGrade(s1, s2, s3) {
-  // Code here
 
   let sum = s1 + s2 + s3;
 
@@ -21,7 +20,6 @@ function getGrade(s1, s2, s3) {
 //////////////// refact ////////////////
 
 function getGrade(s1, s2, s3) {
-  // Code here
 
   let numbers = [s1, s2, s3];
   let numbersCount = numbers.length;
@@ -36,7 +34,7 @@ function getGrade(s1, s2, s3) {
     i = 0;
 
     for (i; i < numbers.length; i++) {
-      amount = amount + numbers[i];
+      amount += numbers[i];
     }
     return amount;
   }
