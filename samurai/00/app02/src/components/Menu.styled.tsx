@@ -5,9 +5,17 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
   
   li > a {
-    color: green;
+    color: white;
+    
+    &:hover {
+      color: black;
+    }
   }
   
   li + li {

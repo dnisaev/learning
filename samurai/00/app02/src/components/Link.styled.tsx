@@ -4,5 +4,5 @@ export const Link = styled.a`
   font-size: 2rem;
   font-weight: bold;
   background-color: transparent;
-  color: green;
+  color: white;
 `
