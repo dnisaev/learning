@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words translator</title>
+</head>
+
+<body>
+    <script>
+
+        const words = [{
+            original: "Watermelon",
+            translate: "Арбуз"
+        },
+
+        {
+            original: "Cherry",
+            translate: "Вишня"
+        },
+
+        {
+            original: "Apple",
+            translate: "Яблоко"
+        }];
+
+        wordsCount = words.length;
+
+        // ---------------------
+
+        const notificationMessages = {
+            start: [
+                greeting0 = "Привет! Предлагаю тебе проверить знания английского языка.",
+                greeting1 = "ВАЖНО! Перевод слова необходимо печатать с заглавной буквы.",
+                greeting2 = "Готов? Тогда приступим."
+            ],
+
+            finish: {
+                success: "Молодец! Отличный результат!",
+                unsuccess: "Не все получилось :( Попробуй еще раз!"
+            },
+
+            statement: {
+                true: "Верно!",
+                false: "Не уадал :("
+            }
+        }
+
+        const settings = {
+            correctAnswersMinPercent: 50
+        }
+
+        const result = {
+            currentAnswerCount: 0
+        }
+
+        // ----------------------
+
+        for (let i = 0; i < notificationMessages.start.length; i++) {
+            alert(notificationMessages.start[i]);
+        };
+
+        for (let i = 0; i < wordsCount; i++) {
+
+            let userAnswer = prompt(words[i].original);
+
+            if (userAnswer === words[i].translate) {
+                alert(notificationMessages.statement.true);
+                result.currentAnswerCount++;
+            } else (alert(notificationMessages.statement.false));
+
+        }
+
+        const userCorrectAnswersPercent = result.currentAnswerCount / wordsCount * 100;
+
+        if (userCorrectAnswersPercent > settings.correctAnswersMinPercent) {
+            alert(notificationMessages.finish.success);
+        } else {
+            alert(notificationMessages.finish.unsuccess);
+        }   
+    </script>
+</body>
+
+</html>
