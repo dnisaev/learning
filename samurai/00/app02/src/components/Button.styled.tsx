@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {MyAnimation} from "../Animations";
+import {MyAnimation} from "../styles/animations/Animations";
 
 export const StyledBtn = styled.button`
   border: none;
