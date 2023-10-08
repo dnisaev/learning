@@ -1,13 +1,16 @@
 .App {
-  display: block;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
 }
 
 img {
-  width: 300px;
+    width: 300px;
 }
 
 .stars {
-  margin: 3px;
-  font-size: 20px;
+    margin: 3px;
+    font-size: 20px;
 }
