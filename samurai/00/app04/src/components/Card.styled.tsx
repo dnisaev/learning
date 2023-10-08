@@ -6,7 +6,7 @@ export const Card = styled.div`
   display: block;
   width: 280px;
   height: 330px;
-  background-color: ${mainTheme.colors.cardBackground};
+  background-color: ${mainTheme.colors.white};
   border-radius: 15px;
   box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.1);
   font-family: "Inter", sans-serif;
@@ -34,7 +34,7 @@ export const Card = styled.div`
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
-    color: ${mainTheme.colors.textCard}
+    color: ${mainTheme.colors.grey}
   }
 
   button {

@@ -3,12 +3,13 @@ import {mainTheme} from "./styles/Theme";
 import styled from "styled-components";
 import {Button} from "./components/Button.styled";
 import {Card} from "./components/Card.styled";
+import mainPicture from "./images/hero.jpg";
 
 function App() {
     return (
         <Album>
             <Card>
-                {mainTheme.images.hero}
+                <img src={mainPicture} alt={"Hero"}/>
                 <h3>Headline</h3>
                 <p>Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.</p>
                 <Button>See more</Button>

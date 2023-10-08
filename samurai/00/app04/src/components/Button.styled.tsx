@@ -7,23 +7,23 @@ export const Button = styled.button`
   width: 86px;
   height: 30px;
   font-family: "Inter", sans-serif;
-  color: ${mainTheme.colors.cardBackground};
-  background-color: ${mainTheme.colors.btnBackground};
+  color: ${mainTheme.colors.white};
+  background-color: ${mainTheme.colors.blue};
 
   &:hover {
-    border: 2px solid ${mainTheme.colors.btnBorder};
-    color: ${mainTheme.colors.btnBorder};
-    background-color: ${mainTheme.colors.cardBackground};
+    border: 2px solid ${mainTheme.colors.blue};
+    color: ${mainTheme.colors.blue};
+    background-color: ${mainTheme.colors.white};
   }
 
   &:last-child {
-    border: 2px solid ${mainTheme.colors.btnBorder};
-    color: ${mainTheme.colors.btnBackground};
+    border: 2px solid ${mainTheme.colors.blue};
+    color: ${mainTheme.colors.blue};
     background-color: ${mainTheme.colors.transparent};
 
     &:hover {
-      color: ${mainTheme.colors.cardBackground};
-      background-color: ${mainTheme.colors.btnBackground};
+      color: ${mainTheme.colors.white};
+      background-color: ${mainTheme.colors.blue};
     }
   }
 
