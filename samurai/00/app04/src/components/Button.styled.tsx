@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import {mainTheme} from "../styles/Theme";
 
-export const Button = styled.button`
+type ButtonPropsType = {
+    background?: string
+    active?: boolean
+}
+
+export const Button = styled.button<ButtonPropsType>`
   border: none;
   border-radius: 5px;
   width: 86px;
   height: 30px;
   font-family: "Inter", sans-serif;
   color: ${mainTheme.colors.white};
-  background-color: ${mainTheme.colors.blue};
+  background-color: ${props => props.background};
 
   &:hover {
     border: 2px solid ${mainTheme.colors.blue};

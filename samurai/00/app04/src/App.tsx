@@ -12,7 +12,7 @@ function App() {
                 <img src={mainPicture} alt={"Hero"}/>
                 <h3>Headline</h3>
                 <p>Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.</p>
-                <Button>See more</Button>
+                <Button background={mainTheme.colors.black}>See more</Button>
                 <Button>Save</Button>
             </Card>
         </Album>
