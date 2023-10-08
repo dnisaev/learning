@@ -1,11 +1,10 @@
 .App {
-  position: relative;
+  display: block;
   text-align: center;
-  top: 4rem;
 }
 
 img {
-  width: 350px;
+  width: 300px;
 }
 
 .stars {
