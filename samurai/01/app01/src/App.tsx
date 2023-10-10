@@ -24,7 +24,12 @@ function App() {
                 <Field type={"email"} placeholder={"Enter your email"}/>
                 <Field type={"password"} placeholder={"Enter your password"}/>
                 <Label fontSize={"8px"}>
-                    <Field type={"checkbox"} display={"inline"} width={"auto"}/>
+                    <Field
+                        type={"checkbox"}
+                        display={"inline"}
+                        width={"auto"}
+                        cursor={"pointer"}
+                    />
                     <span>Согласен на обработку персональных данных.</span>
                 </Label>
                 <Field
@@ -67,7 +72,7 @@ const Field = styled.input.attrs((props) => ({
     placeholder: props.placeholder || "Enter your message",
     checked: props.checked
 }))<PropsType>`
-  
+
   display: ${props => props.display || "block"};
   padding: 5px 15px;
   margin: 10px auto;
@@ -78,7 +83,7 @@ const Field = styled.input.attrs((props) => ({
   border: ${props => props.border};
   border-radius: ${props => props.borderRadius};
   color: ${props => props.textColor};
-  
+
   &:hover {
     cursor: ${props => props.cursor};
     background-color: transparent;
@@ -90,6 +95,10 @@ const Field = styled.input.attrs((props) => ({
 const Label = styled.label<PropsType>`
   font-size: ${props => props.fontSize || "10px"};
   font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   span {
     position: relative;
