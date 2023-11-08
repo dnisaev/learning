@@ -1,0 +1,29 @@
+import ReactDOM from 'react-dom/client';
+import styled from "styled-components";
+
+
+type AnxietyPropsType = {
+    children: string
+    href?: string
+};
+
+const StyledAnxiety = styled.button<sc-anxietyPropsType>`
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #11be5f;
+`
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+    <div className="App">
+        <StyledAnxiety>ControlButton</StyledAnxiety>
+
+        <StyledAnxiety  XXX="YYY" ZZZ="#">ControlLink</StyledAnxiety>
+    </div>
+);
+
+
+// Что должно быть вместо XXX, YYY и ZZZ, чтобы этот же стилизованный компонент отрисовался как ссылка (тег <a>)?
+// ❗ В ответе укажите значения через пробел: XXX YYY ZZZ

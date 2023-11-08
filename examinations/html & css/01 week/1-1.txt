@@ -1,0 +1,35 @@
+import ReactDOM from 'react-dom/client';
+import styled, { css } from "styled-components";
+
+
+const StyledCookie = styled.a`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  white-space: nowrap;
+  color: #2182d9;
+`
+
+type CookiePropsType = {
+    path: string
+    text: string
+}
+
+function Cookie(props:XXX) {
+    return (
+        <StyledCookie href={props.YYY}>
+            {props.ZZZ}
+        </StyledCookie>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+    <div className="App">
+        <Cookie path="https://hotmart.s3.amazonaws.com/product_pictures/ccdb08be-d4d5-467b-8491-a88bf61024bc/guiahtml38051.png" text="See Cookie" />
+    </div>
+);
+
+
+// Что должно быть вместо XXX, YYY и ZZZ, чтобы код работал корректно?
+// ❗ В ответе укажите значения через пробел: XXX YYY ZZZ
