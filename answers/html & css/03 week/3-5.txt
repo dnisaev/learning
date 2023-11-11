@@ -1,0 +1,39 @@
+import styled from "styled-components";
+import ReactDOM from 'react-dom/client';
+
+const StyledCounty = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  @media screen and (XXXmax-width: 768px) {
+    gap: 20px;
+  }
+`
+
+const StyledAbility = styled.div`
+    padding: 20px;
+    background-color: #8ab2ea;
+    color: #fff
+`
+
+function Camera() {
+    return (
+        <StyledCounty>
+            <StyledAbility>William</StyledAbility>
+            <StyledAbility>Ivan</StyledAbility>
+            <StyledAbility>Mia</StyledAbility>
+            <StyledAbility>Dima</StyledAbility>
+        </StyledCounty>
+
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+    <div className="App">
+        <Camera />
+    </div>
+);
+
+// Что должно быть вместо XXX, чтобы на экранах меньше 768px отступы между ячейками стали 20px?

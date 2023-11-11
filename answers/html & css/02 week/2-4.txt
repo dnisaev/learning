@@ -1,0 +1,44 @@
+import ReactDOM from 'react-dom/client';
+import styled from 'styled-components';
+
+
+const StyledBird = styled.div`
+  padding: 20px;
+  border: 1px solid red;
+  border-radius: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  XXXflex-direction: YYYcolumn-reverse;
+`
+
+const StyledCollection = styled.div`
+  padding: 50px;
+  background-color: tomato;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+  border-radius: 8px;
+`
+
+const AdviceComponent = () => {
+    return (
+        <StyledBird>
+            <StyledCollection>Vanya</StyledCollection>
+            <StyledCollection>Artem</StyledCollection>
+            <StyledCollection>Margo</StyledCollection>
+        </StyledBird>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+    <div className="App">
+        <AdviceComponent />
+    </div>
+);
+
+
+//Что должно быть вместо XXX и YYY, чтобы элементы расположились в столбец (сверху вниз) в обратном порядке?
+//❗ В ответе укажите значения через пробел: XXX YYY
