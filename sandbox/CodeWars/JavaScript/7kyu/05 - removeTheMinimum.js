@@ -17,8 +17,6 @@ function removeSmallest(numbers) {
 
     if (numbers[0] <= numbers[smallestNumIndex]) {
         numbers.splice(0, 1);
-    } else if (numbers[numbers.length - 1] === numbers[smallestNumIndex]) {
-        numbers.splice(-1, 1);
     } else {
         numbers.splice(smallestNumIndex, 1);
     }
