@@ -28,10 +28,11 @@ function UsersList() {
         {id: 4, userName: "John", age: 23},
     ]
 
-    const [usersList, setUsersList] = useState<Array<UserType>>(users.map((u)=>u.userName))
+    const [usersList, setUsersList] = useState<Array<UserType>>(state)
     return (
         <main>
             <h5>User list:</h5>
+            <div>{usersList.map((user, index)=>{return <li key={index}>User {user.name}: {user.age} y.o.</li>})}</div>
             <p>Тут будет список пользователей</p>
         </main>
     )
@@ -44,3 +45,4 @@ ReactDOM.render(
 // ❗ Если мы отмапим массив, то должны увидеть данные пользователей
 // ❗ Ответ дать минимально возможным объёмом кода
 // Первый ответ: UsersList
+// state
