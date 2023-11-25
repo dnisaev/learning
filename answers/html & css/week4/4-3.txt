@@ -37,7 +37,7 @@ const StyledAnxiety = styled.div`
   background-color: #c16ae1;
   transform-origin: center;
   animation: ${anxietyAnimation} 2s ease-in;
-  XXXanimation-fill-mode: YYYforwards;
+  XXXanimation-fill-mode: YYYboth;
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
