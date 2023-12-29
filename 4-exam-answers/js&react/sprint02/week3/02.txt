@@ -1,0 +1,20 @@
+const client = {
+    name: "Natali",
+    age: 4,
+    scores: [42.72, 92.23, 91.47]
+}
+
+const [first, second, third = 8.57] = client.scores
+
+switch(third){
+    case 8.57:
+        console.log("Antigua")
+        break;
+   case 92.23:
+        console.log("Denmark")
+        break;
+   default:
+        console.log("Ireland");
+  }
+/*Какую строку мы увидим в консоли?*/
+
