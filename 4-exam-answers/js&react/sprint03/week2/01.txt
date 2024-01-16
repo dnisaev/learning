@@ -65,3 +65,4 @@ ReactDOM.render(<div>
 )
 
 // Что нужно написать вместо XXX, YYY и ZZZ, чтобы отобразился список студентов?
+// Возможно ответ Provider store appStore
