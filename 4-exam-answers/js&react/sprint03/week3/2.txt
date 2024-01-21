@@ -42,3 +42,4 @@ ReactDOM.render(<TempManager/>, document.getElementById('root'))
 //Пример ответа: const increaseSeconds = () => setSeconds(seconds + 100)
 
 // Первый ответ: const increaseSeconds = useCallback(() => setSeconds(seconds + 100),[seconds])
+// Верный ответ: const resetTemp = useCallback(() => setTemp(0),[])
