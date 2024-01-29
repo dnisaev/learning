@@ -1,30 +1,30 @@
 const globalVariableShowCounter = () => {
-    let counterValue = localStorage.getItem('counterVisitorsKey');
+    let currentCounterValue = localStorage.getItem('counterVisitorsKey');
     let lastVisitValue = localStorage.getItem('lastVisitKey');
 
-    const minValueCounter = 11;
-    const maxValueCounter = 23;
-    const minValueInterval = 1;
-    const maxValueInterval = 3;
+    const minCounterValue = 11;
+    const maxCounterValue = 23;
+    const minIntervalValue = 1;
+    const maxIntervalValue = 3;
     const getCurrentHours = new Date().getHours().toString();
 
     const getRandomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };
 
-    console.log(`test interval with include min/max ${getRandomNumber(minValueInterval, maxValueInterval)}`);
+    console.log(`test interval with include min/max 1-3: ${getRandomNumber(minIntervalValue, maxIntervalValue)}`);
 
-    if (counterValue) {
-        document.getElementById('counterVisitorsId').innerHTML = counterValue;
-        console.log(`CounterVisitorsKey already initialed: ${counterValue}`);
-        console.log(`LastVisitKey already initialed: ${getCurrentHours}`);
+    if (currentCounterValue) {
+        document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
+        console.warn(`CounterVisitorsKey already initialized: ${currentCounterValue}`);
+        console.warn(`LastVisitKey already initialized: ${getCurrentHours}`);
     } else {
-        counterValue = getRandomNumber(minValueCounter, maxValueCounter).toString();
-        document.getElementById('counterVisitorsId').innerHTML = counterValue;
-        localStorage.setItem('counterVisitorsKey', counterValue);
+        currentCounterValue = getRandomNumber(minCounterValue, maxCounterValue).toString();
+        document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
+        localStorage.setItem('counterVisitorsKey', currentCounterValue);
         localStorage.setItem('lastVisitKey', getCurrentHours);
-        console.log(`Initial counterVisitorsKey by first visit: ${counterValue}`);
-        console.log(`Initial lastVisitKey by first visit: ${getCurrentHours}`);
+        console.warn(`CounterVisitorsKey initialized by first visit: ${currentCounterValue}`);
+        console.warn(`LastVisitKey initialized by first visit: ${getCurrentHours}`);
     }
 
     function interval(count) {
@@ -35,7 +35,7 @@ const globalVariableShowCounter = () => {
                 localStorage.setItem('counterVisitorsKey', count);
                 console.log(`Change counterVisitorsKey by refresh browser page: ${count}`);
             } else {
-                count = getRandomNumber(minValueCounter, maxValueCounter);
+                count = getRandomNumber(minCounterValue, maxCounterValue);
                 document.getElementById('counterVisitorsId').innerHTML = count;
                 localStorage.setItem('lastVisitKey', getCurrentHours);
                 localStorage.setItem('counterVisitorsKey', count);
@@ -43,7 +43,7 @@ const globalVariableShowCounter = () => {
             }
         }
         return setInterval(() => {
-            count += getRandomNumber(minValueInterval, maxValueInterval);
+            count += getRandomNumber(minIntervalValue, maxIntervalValue);
             document.getElementById('counterVisitorsId').innerHTML = count;
             localStorage.setItem('counterVisitorsKey', count);
             console.log(`Change counterVisitorsKey by 60 seconds setInterval: ${count}`);
@@ -51,10 +51,10 @@ const globalVariableShowCounter = () => {
     }
 
     function showCounter() {
-        if (+counterValue > 0) {
-            interval(+counterValue);
+        if (+currentCounterValue > 0) {
+            interval(+currentCounterValue);
         } else {
-            interval(getRandomNumber(minValueCounter, maxValueCounter));
+            interval(getRandomNumber(minCounterValue, maxCounterValue));
         }
     }
 
