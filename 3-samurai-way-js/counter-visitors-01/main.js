@@ -11,7 +11,8 @@ function interval(count) {
         count += Math.floor(Math.random() * 2) + 1;
         document.getElementById('counterVisitorsId').innerHTML = count;
         localStorage.setItem('counterVisitorsKey', count);
-    }, (60 * 1000) * 10)
+        console.log(count);
+    }, (60 * 1000) * 1)
 }
 
 function showCounterValue() {
