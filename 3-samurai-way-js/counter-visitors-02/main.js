@@ -1,4 +1,4 @@
-const globalVariableShowCounter = () => {
+const globalShowCounter = () => {
     let currentCounterValue = localStorage.getItem('counterVisitorsKey');
     let lastVisitValue = localStorage.getItem('lastVisitKey');
 
@@ -61,4 +61,4 @@ const globalVariableShowCounter = () => {
     showCounter()
 }
 
-globalVariableShowCounter()
+globalShowCounter()
