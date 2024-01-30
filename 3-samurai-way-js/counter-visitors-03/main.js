@@ -14,7 +14,7 @@ const globalShowCounter = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };
 
-    //console.log(`test interval with include min/max 1-3: ${getRandomNumber(minIntervalValue, maxIntervalValue)}`);
+    console.log(`test interval with include min/max 1-3: ${getRandomNumber(minIntervalValue, maxIntervalValue)}`);
 
     if (getUrlValue !== document.location.href) {
         console.log('Url is new')
@@ -54,8 +54,8 @@ const globalShowCounter = () => {
             count += getRandomNumber(minIntervalValue, maxIntervalValue);
             document.getElementById('counterVisitorsId').innerHTML = count;
             localStorage.setItem('counterVisitorsKey', count);
-            console.log(`Change counterVisitorsKey by 60 seconds setInterval: ${count}`);
-        }, (60 * 1000))
+            console.log(`Change counterVisitorsKey by 30 minutes setInterval: ${count}`);
+        }, (60 * 1000) * 30)
     }
 
     function showCounter() {
