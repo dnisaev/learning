@@ -1,21 +1,29 @@
-console.log(`answer = ${findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1])}`);
-console.log(`answer = ${findOdd([7])}`);
+console.log(`answer = ${findOddJuniorSolution([7])}, should be = 7`);
+console.log(`answer = ${findOddJuniorSolution([0])}, should be = 0`);
+console.log(`answer = ${findOddJuniorSolution([1,1,2])}, should be = 2`);
+console.log(`answer = ${findOddJuniorSolution([0,1,0,1,0])}, should be = 0`);
+console.log(`answer = ${findOddJuniorSolution([1,2,2,3,3,3,4,3,3,3,2,2,1])}, should be = 4`);
+console.log(`answer = ${findOddJuniorSolution([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5])}, should be = 5`);
+console.log(`answer = ${findOddJuniorSolution([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5])}, should be = -1`);
+console.log(`answer = ${findOddJuniorSolution([20,1,1,2,2,3,3,5,5,4,20,4,5])}, should be = 5`);
+console.log(`answer = ${findOddJuniorSolution([10])}, should be = 10`);
+console.log(`answer = ${findOddJuniorSolution([1,1,1,1,1,1,10,1,1,1,1])}, should be = 10`);
+console.log(`answer = ${findOddJuniorSolution([5,4,3,2,1,5,4,3,2,10,10])}, should be = 1`);
 
-function findOdd(arr) {
+function findOddJuniorSolution(arr) {
+    const countNumbers = {};
 
-    let countItems = {};
-    for (const item of arr) {
-        countItems[item] = countItems[item] ? countItems[item] + 1 : 1;
+    for (const num of arr) {
+        countNumbers[num] = countNumbers[num] ? countNumbers[num] + 1 : 1;
     }
 
-    console.log(countItems)
+    const arrayNum= Object.keys(countNumbers).map(str => +str);
+    const minNum = Math.min.apply(null, arrayNum);
+    const maxNum = Math.max.apply(null, arrayNum);
 
-    let result= 101;
-    for (let i = 0; i < arr.length; i++) {
-        console.log(countItems[i])
-        countItems[i] % 2 > 0 ? result = i : result;
+    for (let i = minNum; i <= maxNum; i++) {
+        if (countNumbers[i] % 2 > 0) {
+            return i
+        }
     }
-
-    return result;
 }
-
