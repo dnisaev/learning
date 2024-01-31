@@ -1,8 +1,8 @@
 const globalShowCounter = () => {
     let currentCounterValue = localStorage.getItem('counterVisitorsKey');
     let lastVisitValue = localStorage.getItem('lastVisitKey');
-    //let getUrlValue = localStorage.getItem('currentUrlKey');
-    //localStorage.setItem('currentUrlKey', document.location.href);
+    // let getUrlValue = localStorage.getItem('currentUrlKey');
+    // localStorage.setItem('currentUrlKey', document.location.href);
 
     const minCounterValue = 7;
     const maxCounterValue = 17;
