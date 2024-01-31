@@ -1,8 +1,8 @@
 const globalShowCounter = () => {
     let currentCounterValue = localStorage.getItem('counterVisitorsKey');
     let lastVisitValue = localStorage.getItem('lastVisitKey');
-    let getUrlValue = localStorage.getItem('currentUrlKey');
-    localStorage.setItem('currentUrlKey', document.location.href);
+    //let getUrlValue = localStorage.getItem('currentUrlKey');
+    //localStorage.setItem('currentUrlKey', document.location.href);
 
     const minCounterValue = 7;
     const maxCounterValue = 17;
@@ -14,13 +14,13 @@ const globalShowCounter = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };
 
-    console.log(`test interval with include min/max 1-3: ${getRandomNumber(minIntervalValue, maxIntervalValue)}`);
-
-    if (getUrlValue !== document.location.href) {
-        console.log('Url is new')
-    } else {
-        console.log('Url is old')
-    }
+    // console.log(`test interval with include min/max 1-3: ${getRandomNumber(minIntervalValue, maxIntervalValue)}`);
+    //
+    // if (getUrlValue !== document.location.href) {
+    //     console.log('Url is new')
+    // } else {
+    //     console.log('Url is old')
+    // }
 
     if (currentCounterValue) {
         document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
@@ -36,6 +36,11 @@ const globalShowCounter = () => {
     }
 
     function interval(count) {
+        console.log(`============================================`);
+        console.log(`New LastVisitKey: ${lastVisitValue ? lastVisitValue.valueOf() : null}`);
+        console.log(`Current LastVisitKey: ${getCurrentVisitKey}`);
+        console.log(`Is Equal Both LastVisitKeys: ${lastVisitValue ? lastVisitValue.valueOf() === getCurrentVisitKey : false}`);
+        console.log(`============================================`);
         if (lastVisitValue) {
             if (lastVisitValue.valueOf() === getCurrentVisitKey) {
                 count += 1;
@@ -54,8 +59,8 @@ const globalShowCounter = () => {
             count += getRandomNumber(minIntervalValue, maxIntervalValue);
             document.getElementById('counterVisitorsId').innerHTML = count;
             localStorage.setItem('counterVisitorsKey', count);
-            console.log(`Change counterVisitorsKey by 30 minutes setInterval: ${count}`);
-        }, (60 * 1000) * 30)
+            console.log(`Change counterVisitorsKey by 10 minutes setInterval: ${count}`);
+        }, (60 * 1000) * 10)
     }
 
     function showCounter() {
