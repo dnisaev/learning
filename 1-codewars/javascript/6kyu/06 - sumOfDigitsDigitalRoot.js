@@ -2,8 +2,7 @@ function digitalRoot(n) {
 
     const sumOfNum = Array
         .from(n.toString())
-        .map(num => +num)
-        .reduce((acc, num) => acc + num);
+        .reduce((acc, num) => +acc + +num);
 
     return sumOfNum.toString().length > 1 ? digitalRoot(sumOfNum) : sumOfNum;
 }
