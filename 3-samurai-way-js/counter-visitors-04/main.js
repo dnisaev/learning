@@ -1,23 +1,67 @@
 function globalShowCounter() {
     let currentCounterValue = localStorage.getItem('counterVisitorsKey');
-    let lastVisitValue = localStorage.getItem('lastVisitKey');
+    const lastVisitValue = localStorage.getItem('lastVisitKey');
+    const getCurrentVisitKey = new Date().getHours().toString();
 
-    const minCounterValue = 7;
-    const maxCounterValue = 17;
-    const minIntervalValue = 1;
-    const maxIntervalValue = 2;
-    const getCurrentVisitKey = `1501-1612-${new Date().getHours().toString()}-3112-1204`;
-
-    const getRandomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    };
+    function isNewHours(currentHours) {
+        switch (currentHours) {
+            case "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8": {
+                return "5"
+            }
+            case "9": {
+                return "6"
+            }
+            case "10": {
+                return "7"
+            }
+            case "11": {
+                return "8"
+            }
+            case "12": {
+                return "9"
+            }
+            case "13": {
+                return "10"
+            }
+            case "14": {
+                return "11"
+            }
+            case "15": {
+                return "12"
+            }
+            case "16": {
+                return "13"
+            }
+            case "17": {
+                return "14"
+            }
+            case "18": {
+                return "15"
+            }
+            case "19": {
+                return "16"
+            }
+            case "20": {
+                return "17"
+            }
+            case "21": {
+                return "18"
+            }
+            case "22": {
+                return "19"
+            }
+            case "23": {
+                return "20"
+            }
+        }
+    }
 
     if (currentCounterValue) {
         document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
         console.log(`CounterVisitorsKey already initialized: ${currentCounterValue}`);
         console.log(`LastVisitKey already initialized: ${getCurrentVisitKey}`);
     } else {
-        currentCounterValue = getRandomNumber(minCounterValue, maxCounterValue).toString();
+        currentCounterValue = isNewHours(getCurrentVisitKey);
         document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
         localStorage.setItem('counterVisitorsKey', currentCounterValue);
         localStorage.setItem('lastVisitKey', getCurrentVisitKey);
@@ -38,26 +82,21 @@ function globalShowCounter() {
                 localStorage.setItem('counterVisitorsKey', count);
                 console.log(`Change counterVisitorsKey by refresh browser page: ${count}`);
             } else {
-                count = getRandomNumber(minCounterValue, maxCounterValue);
+                count = isNewHours(getCurrentVisitKey);
                 document.getElementById('counterVisitorsId').innerHTML = count;
                 localStorage.setItem('lastVisitKey', getCurrentVisitKey);
                 localStorage.setItem('counterVisitorsKey', count);
                 console.log(`Change counterVisitorsKey by new hours date: ${count}`);
             }
         }
-        return setInterval(() => {
-            count += getRandomNumber(minIntervalValue, maxIntervalValue);
-            document.getElementById('counterVisitorsId').innerHTML = count;
-            localStorage.setItem('counterVisitorsKey', count);
-            console.log(`Change counterVisitorsKey by 120 minutes setInterval: ${count}`);
-        }, (60 * 1000) * 120)
+
     }
 
     function showCounter() {
         if (+currentCounterValue > 0) {
             interval(+currentCounterValue);
         } else {
-            interval(getRandomNumber(minCounterValue, maxCounterValue));
+            interval(isNewHours(getCurrentVisitKey));
         }
     }
 
