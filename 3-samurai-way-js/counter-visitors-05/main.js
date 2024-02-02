@@ -40,12 +40,12 @@ function showVisitorsCounter() {
             for (let i = 0; i <= 9; i++) {
                 if (i === 2 || i === 3 || i === 4) {
                     if (string.includes(`${i}`, string.length - 1)) {
-                        console.log(`${i}` + ' ' + string.includes(`${i}`, string.length - 1))
+                        console.log(`${i}`, true)
                         return document.getElementById('counterDeclensionId').innerHTML = 'человека'
                     }
                 } else {
                     if (string.includes(`${i}`, string.length - 1)) {
-                        console.log(`${i}` + ' ' + string.includes(`${i}`, string.length - 1))
+                        console.log(`${i}`, true)
                         return document.getElementById('counterDeclensionId').innerHTML = 'человек'
                     }
                 }
