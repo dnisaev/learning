@@ -56,12 +56,62 @@ function globalShowCounter() {
         }
     }
 
+    function correctDeclension(counterValue) {
+
+        const stringCounterValue = counterValue.toString();
+
+        if (stringCounterValue.includes('12', stringCounterValue.length - 2)) {
+            console.log('12 ' + stringCounterValue.includes('12', stringCounterValue.length - 2))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('13', stringCounterValue.length - 2)) {
+            console.log('13 ' + stringCounterValue.includes('13', stringCounterValue.length - 2))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('14', stringCounterValue.length - 2)) {
+            console.log('14 ' + stringCounterValue.includes('14', stringCounterValue.length - 2))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('0', stringCounterValue.length - 1)) {
+            console.log('0 ' + stringCounterValue.includes('0', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('1', stringCounterValue.length - 1)) {
+            console.log('1 ' + stringCounterValue.includes('1', counterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('2', stringCounterValue.length - 1)) {
+            console.log('2 ' + stringCounterValue.includes('2', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человека'
+        } else if (stringCounterValue.includes('3', stringCounterValue.length - 1)) {
+            console.log('3 ' + stringCounterValue.includes('3', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человека'
+        } else if (stringCounterValue.includes('4', stringCounterValue.length - 1)) {
+            console.log('4 ' + stringCounterValue.includes('4', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человека'
+        } else if (stringCounterValue.includes('5', stringCounterValue.length - 1)) {
+            console.log('5 ' + stringCounterValue.includes('5', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('6', stringCounterValue.length - 1)) {
+            console.log('6 ' + stringCounterValue.includes('6', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('7', stringCounterValue.length - 1)) {
+            console.log('7 ' + stringCounterValue.includes('7', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('8', stringCounterValue.length - 1)) {
+            console.log('8 ' + stringCounterValue.includes('8', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else if (stringCounterValue.includes('9', stringCounterValue.length - 1)) {
+            console.log('9 ' + stringCounterValue.includes('9', stringCounterValue.length - 1))
+            document.getElementById('counterDeclensionId').innerHTML = 'человек'
+        } else {
+            console.log('Else')
+            document.getElementById('counterDeclensionId').innerHTML = 'человека'
+        }
+    }
+
     if (currentCounterValue) {
         document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
         console.log(`CounterVisitorsKey already initialized: ${currentCounterValue}`);
         console.log(`LastVisitKey already initialized: ${getCurrentVisitKey}`);
     } else {
         currentCounterValue = isNewHours(getCurrentVisitKey);
+        correctDeclension(currentCounterValue);
         document.getElementById('counterVisitorsId').innerHTML = currentCounterValue;
         localStorage.setItem('counterVisitorsKey', currentCounterValue);
         localStorage.setItem('lastVisitKey', getCurrentVisitKey);
@@ -81,12 +131,14 @@ function globalShowCounter() {
                 document.getElementById('counterVisitorsId').innerHTML = count;
                 localStorage.setItem('counterVisitorsKey', count);
                 console.log(`Change counterVisitorsKey by refresh browser page: ${count}`);
+                correctDeclension(count);
             } else {
                 count = isNewHours(getCurrentVisitKey);
                 document.getElementById('counterVisitorsId').innerHTML = count;
                 localStorage.setItem('lastVisitKey', getCurrentVisitKey);
                 localStorage.setItem('counterVisitorsKey', count);
                 console.log(`Change counterVisitorsKey by new hours date: ${count}`);
+                correctDeclension(count);
             }
         }
 
