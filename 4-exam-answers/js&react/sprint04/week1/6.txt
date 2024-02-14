@@ -61,4 +61,5 @@ root.render(<App/>)
 
 // 🖥 Пример ответа: return Promise.resolve()
 // Неверный ответ: return instance.get('posts')
-// return instance.get<PostType>('posts')
+// Неверный ответ: return instance.get<PostType>('posts')
+// Возможно: return instance.get<Array<PostType>>('posts')

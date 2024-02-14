@@ -76,4 +76,5 @@ root.render(<App/>)
 //
 // 🖥 Пример ответа: return Promise.resolve(payload)
 // Неверно: return instance.post('comments', payload)
-// return instance.post<CommentType>('comments', payload)
+// Неверно: return instance.post<CommentType>('comments', payload)
+// Возможно: instance.post<CommentType>('comments', payload)
