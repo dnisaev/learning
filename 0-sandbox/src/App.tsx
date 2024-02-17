@@ -22,13 +22,13 @@ function App() {
 export default App;
 
 const Album = styled.div`
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
-  @media ${mainTheme.media.tablet} {
-    flex-direction: column;
-  }
+    @media ${mainTheme.media.tablet} {
+        flex-direction: column;
+    }
 `

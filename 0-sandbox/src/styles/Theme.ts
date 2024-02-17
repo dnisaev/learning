@@ -1,4 +1,3 @@
-
 export const mainTheme = {
     colors: {
         background: "#e3e3e3",
