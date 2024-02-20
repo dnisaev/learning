@@ -116,4 +116,4 @@ root.render(
 
 // 🖥 Пример ответа: const store = createStore(rootReducer, applyMiddleware(thunk))
 // Неверный ответ: .catch((e: AxiosError) => {dispatch(setErrorAC(e.message))})
-// Возможно: dispatch(setErrorAC(e.message))
+// Попробовать ответ: dispatch(setErrorAC(e.message))

@@ -172,3 +172,4 @@ root.render(
 
 // 🖥 Пример ответа: style={{marginRight: '20px'}}
 // Неверный ответ: disabled={isLoading}
+// Попробовать ответ: disabled={p.isDisabled}
