@@ -1,9 +1,0 @@
-const getArray = (a, b, c) => {
-  return [c, b, a]
-}
-
-const [communication, address, bommunication]  = getArray(12, 70, 70)
-
-console.log(communication)
-
-/*Какое число будет выведено в консоль?*/
